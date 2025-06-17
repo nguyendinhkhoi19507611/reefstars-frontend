@@ -4,11 +4,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './contexts/AuthContext';
 
-// Layout Components
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 
-// Pages - Public
 import Home from './pages/Home';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
@@ -17,11 +15,9 @@ import CompanyDetail from './pages/CompanyDetail';
 import RegionExplore from './pages/RegionExplore';
 import Statistics from './pages/Statistics';
 
-// Pages - Private
 import Profile from './pages/Profile/Profile';
 import QRScanner from './pages/QRScanner';
 
-// Components
 import ProtectedRoute from './components/Auth/ProtectedRoute';
 import LoadingSpinner from './components/UI/LoadingSpinner';
 
@@ -34,26 +30,20 @@ function App() {
           
           <main className="flex-1 pt-16 lg:pt-20">
             <Routes>
-              {/* Public Routes */}
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              
-              {/* ReefStar Routes */}
+           
               <Route path="/reefstars/:id" element={<ReefStarDetail />} />
-              
-              {/* Company Routes */}
+             
               <Route path="/companies" element={<CompaniesListing />} />
               <Route path="/companies/:id" element={<CompanyDetail />} />
-              
-              {/* Region Routes */}
+      
               <Route path="/regions" element={<RegionExplore />} />
               <Route path="/regions/:regionName" element={<RegionExplore />} />
-              
-              {/* Statistics */}
+           
               <Route path="/statistics" element={<Statistics />} />
-
-              {/* Protected Routes */}
+              
               <Route
                 path="/profile/*"
                 element={
@@ -70,24 +60,21 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-
-              {/* Additional Public Pages */}
+           
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/conservation" element={<ConservationPage />} />
               <Route path="/help" element={<HelpPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="/terms" element={<TermsPage />} />
-
-              {/* 404 Route */}
+              
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
 
           <Footer />
         </div>
-
-        {/* Toast Notifications */}
+     
         <Toaster
           position="top-right"
           toastOptions={{
@@ -136,7 +123,6 @@ function App() {
   );
 }
 
-// Companies Listing Component
 const CompaniesListing = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-ocean-50">
@@ -165,7 +151,6 @@ const CompaniesListing = () => {
   );
 };
 
-// About Page Component
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-ocean-50">
@@ -213,7 +198,6 @@ const AboutPage = () => {
   );
 };
 
-// Contact Page Component
 const ContactPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-ocean-50">
@@ -248,7 +232,6 @@ const ContactPage = () => {
   );
 };
 
-// Conservation Page Component
 const ConservationPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-ocean-50">
@@ -273,7 +256,6 @@ const ConservationPage = () => {
   );
 };
 
-// Help Page Component
 const HelpPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-ocean-50">
@@ -309,7 +291,6 @@ const HelpPage = () => {
   );
 };
 
-// Privacy Policy Component
 const PrivacyPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-ocean-50">
@@ -333,7 +314,6 @@ const PrivacyPage = () => {
   );
 };
 
-// Terms of Service Component
 const TermsPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-ocean-50">
@@ -357,7 +337,6 @@ const TermsPage = () => {
   );
 };
 
-// 404 Component
 const NotFound = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-ocean-50">

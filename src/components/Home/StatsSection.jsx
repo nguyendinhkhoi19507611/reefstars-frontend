@@ -1,4 +1,3 @@
-// File: reefstars-frontend/src/components/Home/StatsSection.jsx
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';

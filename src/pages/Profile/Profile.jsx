@@ -1,4 +1,3 @@
-// File: reefstars-frontend/src/pages/Profile/Profile.jsx
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';

@@ -1,4 +1,3 @@
-// File: reefstars-frontend/src/components/Home/CallToAction.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';

@@ -1,4 +1,3 @@
-// File: reefstars-frontend/src/pages/Profile/ProfileSettings.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';

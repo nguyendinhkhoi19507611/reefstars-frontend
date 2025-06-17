@@ -1,4 +1,3 @@
-// File: reefstars-frontend/src/pages/CompanyDetail.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';

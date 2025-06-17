@@ -1,4 +1,3 @@
-// File: reefstars-frontend/src/pages/RegionExplore.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -113,13 +112,11 @@ const RegionExplore = () => {
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-ocean-50">
-        {/* Region Selection Header */}
         <div className="bg-white shadow-sm border-b border-gray-200">
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
               <h1 className="text-3xl font-bold text-gray-900">Explore Conservation Regions</h1>
               
-              {/* Region Selector */}
               <div className="flex flex-wrap gap-2">
                 {regions.map((region) => (
                   <button
@@ -141,7 +138,6 @@ const RegionExplore = () => {
 
         {currentRegion && (
           <>
-            {/* Region Hero */}
             <div className={`relative bg-gradient-to-br ${getRegionGradient(currentRegion.name)} text-white overflow-hidden`}>
               <div className="absolute inset-0 bg-pattern-waves opacity-10"></div>
               
@@ -156,8 +152,7 @@ const RegionExplore = () => {
                     <p className="text-xl text-white/90 leading-relaxed mb-8">
                       {currentRegion.description}
                     </p>
-                    
-                    {/* Quick Stats */}
+                   
                     <div className="grid grid-cols-3 gap-4">
                       <div className="text-center">
                         <div className="text-2xl font-bold">{currentRegion.stats?.totalCompanies || 0}</div>
@@ -180,7 +175,7 @@ const RegionExplore = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="space-y-6"
                   >
-                    {/* Climate Info */}
+                 
                     {currentRegion.climate && (
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
                         <h3 className="text-lg font-semibold mb-4">Climate Information</h3>
@@ -196,8 +191,7 @@ const RegionExplore = () => {
                         </div>
                       </div>
                     )}
-
-                    {/* Best Visiting Time */}
+                 
                     {currentRegion.bestVisitingTime && (
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
                         <h3 className="text-lg font-semibold mb-4">Best Time to Visit</h3>
@@ -208,8 +202,7 @@ const RegionExplore = () => {
                 </div>
               </div>
             </div>
-
-            {/* Navigation Tabs */}
+          
             <div className="bg-white border-b border-gray-200">
               <div className="container mx-auto px-4">
                 <nav className="flex space-x-8">
@@ -243,8 +236,7 @@ const RegionExplore = () => {
                 </nav>
               </div>
             </div>
-
-            {/* Tab Content */}
+          
             <div className="container mx-auto px-4 py-8">
               {activeTab === 'overview' && (
                 <RegionOverview region={currentRegion} companies={companies} reefStars={reefStars} />
@@ -265,11 +257,9 @@ const RegionExplore = () => {
   );
 };
 
-// Region Overview Component
 const RegionOverview = ({ region, companies, reefStars }) => {
   return (
     <div className="space-y-8">
-      {/* Highlights */}
       {region.highlights && region.highlights.length > 0 && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -292,8 +282,6 @@ const RegionOverview = ({ region, companies, reefStars }) => {
           </div>
         </motion.div>
       )}
-
-      {/* Featured Companies & Recent Reef Stars */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -369,11 +357,9 @@ const RegionOverview = ({ region, companies, reefStars }) => {
   );
 };
 
-// Companies Tab Component
 const CompaniesTab = ({ companies, region, viewMode, setViewMode }) => {
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex items-center justify-between">
         <h3 className="text-2xl font-bold text-gray-900">
           Conservation Partners in {region}
@@ -398,8 +384,7 @@ const CompaniesTab = ({ companies, region, viewMode, setViewMode }) => {
           </button>
         </div>
       </div>
-
-      {/* Companies Display */}
+     
       {companies.length === 0 ? (
         <div className="text-center py-12">
           <Building2 className="h-16 w-16 text-gray-300 mx-auto mb-4" />
@@ -451,11 +436,9 @@ const CompaniesTab = ({ companies, region, viewMode, setViewMode }) => {
   );
 };
 
-// ReefStars Tab Component
 const ReefStarsTab = ({ reefStars, region, viewMode, setViewMode }) => {
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex items-center justify-between">
         <h3 className="text-2xl font-bold text-gray-900">
           Reef Stars in {region}

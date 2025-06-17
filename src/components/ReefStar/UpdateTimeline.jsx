@@ -1,4 +1,3 @@
-// File: reefstars-frontend/src/components/ReefStar/UpdateTimeline.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 

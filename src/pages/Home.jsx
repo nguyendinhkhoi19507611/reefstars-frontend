@@ -1,8 +1,6 @@
-// File: reefstars-frontend/src/pages/Home.jsx
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-// Components
 import HeroSection from '../components/Home/HeroSection';
 import RecentActivity from '../components/Home/RecentActivity';
 import RegionsOverview from '../components/Home/RegionsOverview';
@@ -27,22 +25,16 @@ const Home = () => {
       </Helmet>
 
       <div className="overflow-hidden">
-        {/* Hero Section */}
         <HeroSection />
-        
-        {/* Stats Overview */}
+      
         <StatsSection />
-        
-        {/* Recent Activity */}
+      
         <RecentActivity />
-        
-        {/* Regions Overview */}
+      
         <RegionsOverview />
-        
-        {/* Featured Companies */}
+      
         <FeaturedCompanies />
-        
-        {/* Call to Action */}
+      
         <CallToAction />
       </div>
     </>

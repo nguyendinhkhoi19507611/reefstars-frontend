@@ -1,4 +1,3 @@
-// File: reefstars-frontend/src/pages/QRScanner.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -24,18 +23,16 @@ const QRScanner = () => {
   const [searchResult, setSearchResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [mode, setMode] = useState('camera'); // 'camera', 'manual', 'upload'
+  const [mode, setMode] = useState('camera'); 
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const navigate = useNavigate();
-
-  // Mock QR code scanning (in real app, you would use a QR code library)
+  
   const startScanning = async () => {
     try {
       setScanning(true);
       setError(null);
-      
-      // Request camera permission
+  
       const stream = await navigator.mediaDevices.getUserMedia({ 
         video: { facingMode: 'environment' } 
       });
@@ -45,10 +42,7 @@ const QRScanner = () => {
         videoRef.current.play();
       }
 
-      // Mock QR detection (in real app, use a QR library like jsQR)
-      // This is just for demonstration
       setTimeout(() => {
-        // Simulate QR code detection
         const mockQRCode = 'RS' + Math.random().toString(36).substr(2, 6).toUpperCase();
         handleQRDetected(mockQRCode);
       }, 3000);

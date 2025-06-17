@@ -1,66 +1,71 @@
-
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/* Base styles */
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-feature-settings: 'cv03', 'cv04', 'cv11';
   line-height: 1.6;
   color: #1f2937;
   background: linear-gradient(135deg, #f0fdfa 0%, #e6fffa 100%);
   min-height: 100vh;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
-/* Custom components */
 @layer components {
-  /* Button variants */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-ocean-gradient text-white font-semibold rounded-xl shadow-ocean hover:shadow-lg transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-ocean-500 to-ocean-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:ring-offset-2 active:scale-95;
   }
   
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-white text-ocean-700 font-semibold rounded-xl border-2 border-ocean-200 hover:border-ocean-300 hover:bg-ocean-50 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-white text-ocean-700 font-semibold rounded-xl border-2 border-ocean-200 hover:border-ocean-300 hover:bg-ocean-50 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:ring-offset-2 active:scale-95;
   }
   
   .btn-coral {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-coral-gradient text-white font-semibold rounded-xl shadow-coral hover:shadow-lg transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-coral-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-coral-500 to-coral-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-coral-500 focus:ring-offset-2 active:scale-95;
   }
   
   .btn-reef {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-reef-gradient text-white font-semibold rounded-xl shadow-reef hover:shadow-lg transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-reef-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-reef-500 to-reef-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-reef-500 focus:ring-offset-2 active:scale-95;
   }
 
-  /* Card variants */
   .card {
-    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100;
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 backdrop-blur-sm;
   }
   
   .card-ocean {
-    @apply bg-gradient-to-br from-ocean-50 to-white rounded-2xl shadow-ocean hover:shadow-xl transition-all duration-300 border border-ocean-100;
+    @apply bg-gradient-to-br from-ocean-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-ocean-100;
   }
   
   .card-coral {
-    @apply bg-gradient-to-br from-coral-50 to-white rounded-2xl shadow-coral hover:shadow-xl transition-all duration-300 border border-coral-100;
+    @apply bg-gradient-to-br from-coral-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-coral-100;
   }
   
   .card-reef {
-    @apply bg-gradient-to-br from-reef-50 to-white rounded-2xl shadow-reef hover:shadow-xl transition-all duration-300 border border-reef-100;
+    @apply bg-gradient-to-br from-reef-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-reef-100;
   }
-
-  /* Glass effect */
+ 
   .glass {
     @apply bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl;
   }
@@ -69,16 +74,14 @@ body {
     @apply bg-ocean-500/20 backdrop-blur-md border border-ocean-300/30 rounded-2xl;
   }
 
-  /* Input variants */
   .input {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-ocean-500 focus:border-ocean-500 transition-colors duration-200 bg-white;
+    @apply w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-ocean-500 focus:border-ocean-500 transition-all duration-200 bg-white placeholder-gray-400 text-gray-900;
   }
   
   .input-ocean {
-    @apply w-full px-4 py-3 border border-ocean-200 rounded-xl focus:ring-2 focus:ring-ocean-500 focus:border-ocean-500 transition-colors duration-200 bg-ocean-50/50;
+    @apply w-full px-4 py-3 border border-ocean-200 rounded-xl focus:ring-2 focus:ring-ocean-500 focus:border-ocean-500 transition-all duration-200 bg-ocean-50/50 placeholder-gray-500 text-gray-900;
   }
 
-  /* Text variants */
   .text-gradient {
     @apply bg-gradient-to-r from-ocean-600 to-reef-600 bg-clip-text text-transparent;
   }
@@ -87,114 +90,83 @@ body {
     @apply bg-gradient-to-r from-coral-600 to-orange-600 bg-clip-text text-transparent;
   }
 
-  /* Section spacing */
   .section {
     @apply py-16 px-4 sm:px-6 lg:px-8;
   }
   
   .container {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
 
-/* Custom utilities */
 @layer utilities {
-  /* Animation delays */
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
-  
-  /* Scroll animations */
-  .scroll-fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
-  }
-  
-  .scroll-fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .scroll-slide-left {
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: all 0.6s ease-out;
-  }
-  
-  .scroll-slide-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-  .scroll-slide-right {
-    opacity: 0;
-    transform: translateX(30px);
-    transition: all 0.6s ease-out;
-  }
-  
-  .scroll-slide-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-  .scroll-scale-in {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 0.6s ease-out;
-  }
-  
-  .scroll-scale-in.visible {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  /* Hover effects */
   .hover-lift {
     @apply transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
   }
   
   .hover-glow {
-    @apply transform transition-all duration-300 hover:shadow-glow;
+    @apply transform transition-all duration-300 hover:shadow-ocean;
   }
   
   .hover-grow {
     @apply transform transition-all duration-300 hover:scale-105;
   }
 
-  /* Background patterns */
   .bg-pattern-dots {
-    background-image: radial-gradient(circle, #0891b2 1px, transparent 1px);
+    background-image: radial-gradient(circle, theme('colors.ocean.500') 1px, transparent 1px);
     background-size: 20px 20px;
   }
   
   .bg-pattern-waves {
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230891b2' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
+ 
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f1f5f9;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #0891b2, #0d9488);
+  background: linear-gradient(135deg, theme('colors.ocean.500'), theme('colors.reef.500'));
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #0e7490, #0f766e);
+  background: linear-gradient(135deg, theme('colors.ocean.600'), theme('colors.reef.600'));
 }
 
-/* Loading animations */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: theme('colors.ocean.500') theme('colors.gray.100');
+}
+
 .loading-dots {
   display: inline-block;
 }
@@ -217,42 +189,34 @@ body {
   }
 }
 
-/* Tooltip */
-.tooltip {
-  position: relative;
+.focus-visible {
+  outline: 2px solid theme('colors.ocean.500');
+  outline-offset: 2px;
 }
 
-.tooltip::before {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
-  z-index: 1000;
+@media print {
+  .no-print {
+    display: none !important;
+  }
 }
 
-.tooltip:hover::before {
-  opacity: 1;
+@media (prefers-contrast: high) {
+  .btn-primary {
+    border: 2px solid currentColor;
+  }
+  
+  .card {
+    border: 2px solid theme('colors.gray.300');
+  }
 }
 
-/* Custom focus styles */
-.focus-ocean:focus {
-  @apply ring-2 ring-ocean-500 ring-offset-2 outline-none;
-}
-
-.focus-coral:focus {
-  @apply ring-2 ring-coral-500 ring-offset-2 outline-none;
-}
-
-.focus-reef:focus {
-  @apply ring-2 ring-reef-500 ring-offset-2 outline-none;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

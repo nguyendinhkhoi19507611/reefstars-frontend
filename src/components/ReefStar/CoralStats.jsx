@@ -1,4 +1,3 @@
-// File: reefstars-frontend/src/components/ReefStar/CoralStats.jsx
 import React from 'react';
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { 

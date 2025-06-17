@@ -1,4 +1,3 @@
-// File: reefstars-frontend/src/components/ReefStar/GrowthChart.jsx
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from 'recharts';
 import { formatDateShort } from '../../services/api';

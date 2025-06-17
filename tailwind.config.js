@@ -7,7 +7,6 @@ export default {
     theme: {
       extend: {
         colors: {
-          // Ocean-inspired color palette
           ocean: {
             50: '#f0fdfa',
             100: '#ccfbf1',
@@ -49,7 +48,7 @@ export default {
           }
         },
         backgroundImage: {
-          'ocean-gradient': 'linear-gradient(135deg, #0891b2 0%, #0d9488 50%, #059669 100%)',
+          'ocean-gradient': 'linear-gradient(135deg, #14b8a6 0%, #0d9488 50%, #059669 100%)',
           'coral-gradient': 'linear-gradient(135deg, #f97316 0%, #ed7420 50%, #ea580c 100%)',
           'reef-gradient': 'linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%)',
           'hero-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
@@ -110,16 +109,29 @@ export default {
           'glow': '0 0 20px rgba(20, 184, 166, 0.4)',
           'glow-coral': '0 0 20px rgba(239, 116, 32, 0.4)',
           'glow-reef': '0 0 20px rgba(16, 185, 129, 0.4)',
-          'ocean': '0 10px 40px rgba(14, 148, 136, 0.3)',
-          'coral': '0 10px 40px rgba(239, 116, 32, 0.3)',
-          'reef': '0 10px 40px rgba(16, 185, 129, 0.3)',
+          'ocean': '0 10px 40px rgba(14, 148, 136, 0.15)',
+          'coral': '0 10px 40px rgba(239, 116, 32, 0.15)',
+          'reef': '0 10px 40px rgba(16, 185, 129, 0.15)',
         },
         backdropBlur: {
           xs: '2px',
         },
         fontFamily: {
+          'sans': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
           'display': ['Inter', 'system-ui', 'sans-serif'],
           'body': ['Inter', 'system-ui', 'sans-serif'],
+        },
+        spacing: {
+          '18': '4.5rem',
+          '88': '22rem',
+          '128': '32rem',
+        },
+        maxWidth: {
+          '8xl': '88rem',
+          '9xl': '96rem',
+        },
+        borderRadius: {
+          '4xl': '2rem',
         }
       },
     },
@@ -127,4 +139,7 @@ export default {
       require('@tailwindcss/forms'),
       require('@tailwindcss/typography'),
     ],
+    future: {
+      hoverOnlyWhenSupported: true,
+    },
   }

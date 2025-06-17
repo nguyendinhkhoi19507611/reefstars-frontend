@@ -1,4 +1,3 @@
-// File: reefstars-frontend/src/components/UI/LoadingSpinner.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Waves } from 'lucide-react';

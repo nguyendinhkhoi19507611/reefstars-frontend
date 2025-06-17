@@ -1,4 +1,3 @@
-// File: reefstars-frontend/src/pages/ReefStarDetail.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -47,20 +46,17 @@ const ReefStarDetail = () => {
     const fetchReefStarData = async () => {
       try {
         setLoading(true);
-        
-        // Fetch reef star details
+       
         const reefStarResponse = await reefStarsAPI.getById(id);
         if (reefStarResponse.data.success) {
           setReefStar(reefStarResponse.data.data);
         }
-
-        // Fetch coral updates
+       
         const updatesResponse = await coralUpdatesAPI.getByReefStar(id, { limit: 10 });
         if (updatesResponse.data.success) {
           setUpdates(updatesResponse.data.data);
         }
-
-        // Fetch stats
+       
         const statsResponse = await reefStarsAPI.getStats(id);
         if (statsResponse.data.success) {
           setStats(statsResponse.data.data);
@@ -156,15 +152,12 @@ const ReefStarDetail = () => {
 
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Main Content */}
             <div className="lg:col-span-2 space-y-8">
-              {/* Hero Card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="card overflow-hidden"
               >
-                {/* Status Bar */}
                 <div className="bg-gradient-to-r from-ocean-500 to-reef-500 px-6 py-4">
                   <div className="flex items-center justify-between text-white">
                     <div className="flex items-center space-x-4">
@@ -186,8 +179,7 @@ const ReefStarDetail = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Content */}
+              
                 <div className="p-6">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
                     <div className="text-center">

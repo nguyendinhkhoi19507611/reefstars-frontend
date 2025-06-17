@@ -1,4 +1,3 @@
-// File: reefstars-frontend/src/pages/Statistics.jsx
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
@@ -92,8 +91,7 @@ const Statistics = () => {
     { value: '1year', label: '1 Year' },
     { value: 'all', label: 'All Time' }
   ];
-
-  // Color schemes for charts
+  
   const healthColors = {
     excellent: '#10b981',
     good: '#059669',
@@ -114,7 +112,6 @@ const Statistics = () => {
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-ocean-50">
-        {/* Header */}
         <div className="bg-white shadow-sm border-b border-gray-200">
           <div className="container mx-auto px-4 py-8">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
@@ -122,8 +119,7 @@ const Statistics = () => {
                 <h1 className="text-3xl font-bold text-gray-900">Conservation Analytics</h1>
                 <p className="text-gray-600 mt-2">Real-time insights into coral restoration efforts</p>
               </div>
-
-              {/* Filters */}
+             
               <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
                 <select
                   value={selectedRegion}
@@ -159,7 +155,6 @@ const Statistics = () => {
         </div>
 
         <div className="container mx-auto px-4 py-8 space-y-8">
-          {/* Overview Stats */}
           {overview && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -215,10 +210,8 @@ const Statistics = () => {
               </div>
             </motion.div>
           )}
-
-          {/* Charts Grid */}
+       
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Survival Rate by Coral Type */}
             {survivalRateData?.byCoralType && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -252,8 +245,7 @@ const Statistics = () => {
                 </div>
               </motion.div>
             )}
-
-            {/* Health Distribution */}
+            
             {healthDistribution?.distribution && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -286,8 +278,7 @@ const Statistics = () => {
               </motion.div>
             )}
           </div>
-
-          {/* Monthly Growth Trend */}
+          
           {monthlyGrowth?.reefStarCreation && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -330,10 +321,8 @@ const Statistics = () => {
               </div>
             </motion.div>
           )}
-
-          {/* Regional Performance & Leaderboard */}
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Coverage by Region */}
             {coverageData?.byRegion && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -363,8 +352,7 @@ const Statistics = () => {
                 </div>
               </motion.div>
             )}
-
-            {/* Top Companies Leaderboard */}
+           
             {leaderboard && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -400,8 +388,7 @@ const Statistics = () => {
               </motion.div>
             )}
           </div>
-
-          {/* Key Insights */}
+        
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -448,8 +435,7 @@ const Statistics = () => {
               </div>
             </div>
           </motion.div>
-
-          {/* Environmental Impact */}
+     
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
